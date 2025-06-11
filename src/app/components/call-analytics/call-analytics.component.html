@@ -1,0 +1,118 @@
+<div class="overflow-y-auto">
+  <div class="flex justify-between items-center mb-4">
+    <h2 class="text-xl font-semibold">Call Analytics</h2>
+    <div class="flex gap-4 text-xs">
+      <div
+        class="p-3 px-6 cursor-pointer rounded hover:border-[#334554] border border-transparent transition-all duration-300"
+        [ngClass]="{ 'bg-[#334554] text-white': activeTab === 'history' }"
+        (click)="activeTab = 'history'"
+      >
+        History
+      </div>
+      <div
+        class="p-3 px-6 cursor-pointer rounded hover:border-[#334554] border border-transparent transition-all duration-300"
+        [ngClass]="{ 'bg-[#334554] text-white': activeTab === 'inProgress' }"
+        (click)="activeTab = 'inProgress'"
+      >
+        In Progress
+      </div>
+    </div>
+  </div>
+  <div class="overflow-x-auto border rounded border-gray-200">
+    <table class="min-w-full text-sm text-left text-gray-700 overflow-x-scroll">
+      <thead class=" text-xs uppercase text-gray-500 bg-gray-100">
+        <tr>
+          <th class="px-4 py-3">Dealer Name</th>
+          <th class="px-4 py-3">Additional Info</th>
+          <th class="px-4 py-3">Issue Category</th>
+          <th class="px-4 py-3">Issue Status</th>
+          <th class="px-4 py-3">Comments</th>
+          <th class="px-4 py-3">Call Status</th>
+          <th class="px-4 py-3">Call Details</th>
+          <th class="px-4 py-3">Action</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200">
+        <tr class="hover:bg-gray-50 px-4" *ngFor="let row of rows; let i = index">
+          <td class="px-4 py-3">
+            <div class="flex items-center gap-3">
+              <img
+                src="./assets/Airtel.webp"
+                alt="Airtel"
+                class="w-8 h-8 rounded bg-gray-100 object-contain"
+              />
+              <div>
+                <div class="font-semibold text-base leading-tight">
+                  {{ row.name }}
+                </div>
+                <div class="text-xs text-gray-400">DM0029384</div>
+              </div>
+            </div>
+          </td>
+          <td class="px-4 py-3">
+            <div class="font-semibold">{{ row.info }}</div>
+            <div class="text-xs text-gray-400">03AAAKDJ9283KNS4NDE</div>
+          </td>
+          <td class="px-4 py-3">{{ row.issue }}</td>
+          <td class="px-4 py-3">{{ row.status }}</td>
+          <td class="px-4 py-3">{{ row.comment }}</td>
+          <td class="px-4 py-3">{{ row.callStatus }}</td>
+          <td class="px-4 py-3">
+            <div>
+              <div class="font-semibold">{{ row.date }}</div>
+              <div class="text-xs text-gray-400">{{ row.time }}</div>
+            </div>
+          </td>
+          <td class="px-4 py-3">
+            <div class="flex gap-2">
+              <button
+                class="cursor-pointer w-8 h-8 flex items-center justify-center rounded-lg border border-gray-200 bg-gray-50 hover:bg-gray-100"
+              >
+                <svg
+                  class="w-5 h-5 text-gray-700"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 16v-4m0-4h.01"
+                  />
+                </svg>
+              </button>
+              <button
+                class="cursor-pointer w-8 h-8 flex items-center justify-center rounded-lg border border-gray-200 bg-gray-700"
+              >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 2.994v2.25m10.5-2.25v2.25m-14.252 13.5V7.491a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v11.251m-18 0a2.25 2.25 0 0 0 2.25 2.25h13.5a2.25 2.25 0 0 0 2.25-2.25m-18 0v-7.5a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v7.5m-6.75-6h2.25m-9 2.25h4.5m.002-2.25h.005v.006H12v-.006Zm-.001 4.5h.006v.006h-.006v-.005Zm-2.25.001h.005v.006H9.75v-.006Zm-2.25 0h.005v.005h-.006v-.005Zm6.75-2.247h.005v.005h-.005v-.005Zm0 2.247h.006v.006h-.006v-.006Zm2.25-2.248h.006V15H16.5v-.005Z" />
+              </svg>
+              
+              </button>
+              <button
+                class="cursor-pointer w-8 h-8 flex items-center justify-center rounded-lg border border-blue-200 bg-blue-50 hover:bg-blue-100"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="blue"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

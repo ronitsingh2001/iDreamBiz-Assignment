@@ -1,0 +1,54 @@
+<div class="flex flex-col gap-4 w-full">
+  <div class="flex flex-col md:flex-row justify-between items-center">
+    <h1 class="text-xl font-semibold">My Dashboard</h1>
+    <div class="flex flex-wrap gap-6 items-center text-xs px-8">
+      <div
+        class="p-3 px-6 cursor-pointer rounded hover:border-[#334554] border border-transparent transition-all duration-300"
+        [ngClass]="{ 'bg-[#334554] text-white': activeTab === 'today' }"
+        (click)="onFilterChange('today')"
+      >
+        Today
+      </div>
+      <div
+        class="p-3 px-6 hover:border-[#334554] border border-transparent cursor-pointer rounded transition-all duration-300"
+        [ngClass]="{ 'bg-[#334554] text-white': activeTab === 'week' }"
+        (click)="onFilterChange('week')"
+      >
+        Week
+      </div>
+      <div
+        class="p-3 px-6 hover:border-[#334554] border border-transparent cursor-pointer rounded"
+        [ngClass]="{ 'bg-[#334554] text-white': activeTab === 'month' }"
+        (click)="onFilterChange('month')"
+      >
+        Month
+      </div>
+      <input
+        class="p-2 px-4 border rounded"
+        type="date"
+        name="date"
+        id="date"
+      />
+    </div>
+  </div>
+  <div class="flex gap-4 flex-col lg:flex-row">
+    <div class="lg:w-6/12 grid grid-cols-2 sm:grid-cols-3 gap-4">
+      <app-card
+        *ngFor="let stat of summaryStats"
+        [label]="stat.label"
+        [value]="stat.value"
+      ></app-card>
+    </div>
+    <div class="flex w-full lg:w-6/12 gap-2 rounded">
+      <div class="lg:w-2/5 w-full shadow bg-white p-4 rounded">
+        <app-charts [timePeriod]="activeTab"></app-charts>
+      </div>
+      <div class="lg:w-3/5 w-full shadow bg-white p-4 rounded">
+        <app-barchart [timePeriod]="activeTab"></app-barchart>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mt-4">
+  <app-call-analytics></app-call-analytics>
+</div>

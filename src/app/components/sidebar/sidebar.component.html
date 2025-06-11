@@ -1,0 +1,55 @@
+<div class="flex flex-col gap-4 bg-[#1A2A32] h-full shadow-xl shadow-black min-h-screen">
+  <hr class="m-1 text-blue-900" />
+  <a
+    [routerLink]="['/']"
+    [routerLinkActiveOptions]="{ exact: true }"
+    routerLinkActive="bg-green-900"
+    class="group transition-all duration-300 flex"
+  >
+    <img
+      class="p-4"
+      src="./assets/dash.svg"
+      alt=""
+    />
+  </a>
+  <a
+    [routerLink]="['/call']"
+    routerLinkActive="bg-green-900"
+    class="group transition-all duration-300 flex"
+  >
+    <img
+      class="p-4"
+      src="./assets/call.svg"
+      alt=""
+    />
+  </a>
+  <a
+    [routerLink]="['/miss']"
+    routerLinkActive="bg-green-900"
+    class="group transition-all duration-300 flex"
+  >
+    <img
+      class="p-4"
+      src="./assets/miss.svg"
+      alt=""
+    />
+  </a>
+  <a
+    [routerLink]="['/cal']"
+    routerLinkActive="bg-green-900"
+    class="group transition-all duration-300 flex"
+  >
+    <img
+      class="p-4"
+      src="./assets/cal.svg"
+      alt=""
+    />
+  </a>
+  <a
+    [routerLink]="['/settings']"
+    routerLinkActive="bg-green-900"
+    class="group transition-all duration-300 flex"
+  >
+    <img class="p-4" src="./assets/setting.svg" alt="" />
+  </a>
+</div>
