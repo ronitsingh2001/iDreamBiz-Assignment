@@ -1,30 +1,30 @@
 <div class="flex flex-col gap-4 w-full">
   <div class="flex flex-col md:flex-row justify-between items-center">
     <h1 class="text-xl font-semibold">My Dashboard</h1>
-    <div class="flex flex-wrap gap-6 items-center text-xs px-8">
+    <div class="flex flex-wrap gap-1 md:gap-2 lg:gap-6 items-center text-xs md:px-8">
       <div
-        class="p-3 px-6 cursor-pointer rounded hover:border-[#334554] border border-transparent transition-all duration-300"
+        class="md:p-3 md:px-6 px-2 py-1 cursor-pointer rounded hover:border-[#334554] border border-transparent transition-all duration-300"
         [ngClass]="{ 'bg-[#334554] text-white': activeTab === 'today' }"
         (click)="onFilterChange('today')"
       >
         Today
       </div>
       <div
-        class="p-3 px-6 hover:border-[#334554] border border-transparent cursor-pointer rounded transition-all duration-300"
+        class="md:p-3 md:px-6 px-2 py-1 hover:border-[#334554] border border-transparent cursor-pointer rounded transition-all duration-300"
         [ngClass]="{ 'bg-[#334554] text-white': activeTab === 'week' }"
         (click)="onFilterChange('week')"
       >
         Week
       </div>
       <div
-        class="p-3 px-6 hover:border-[#334554] border border-transparent cursor-pointer rounded"
+        class="md:p-3 md:px-6 px-2 py-1 hover:border-[#334554] border border-transparent cursor-pointer rounded"
         [ngClass]="{ 'bg-[#334554] text-white': activeTab === 'month' }"
         (click)="onFilterChange('month')"
       >
         Month
       </div>
       <input
-        class="p-2 px-4 border rounded"
+        class="md:p-2 md:px-4 px-2 py-1 border rounded"
         type="date"
         name="date"
         id="date"
