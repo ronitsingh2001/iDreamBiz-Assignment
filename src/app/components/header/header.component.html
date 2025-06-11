@@ -1,15 +1,33 @@
-<div class="flex bg-[#1A2A32] items-center w-screen">
+<div class="flex bg-[#1A2A32] h-full items-center w-screen shadow shadow-black">
   <div class="flex gap-4 items-center">
-    <a [routerLink]="['/']" class="flex items-center gap-2">
-      <img class="w-[60px]" src="./assets/logo.png" alt="" />
+    <a [routerLink]="['/']" class="flex items-center gap-2 group transition-all duration-300">
+      <img class="w-[60px] group-hover:opacity-90 transition-opacity" src="./assets/logo.png" alt="iDreamBiz Logo" />
+      <h1 class="text-white text-xl group-hover:text-blue-300 transition-colors">iDreamBiz</h1>
     </a>
-    <h1 class="text-white text-xl">iDreamBiz</h1>
   </div>
   <div class="mx-auto">
-    <input
-      class="border border-gray-700 text-gray-500 rounded-md text-center flex w-auto md:w-100"
-      type="search"
-      placeholder="Search"
-    />
+    <div class="relative">
+      <input
+        class="border border-gray-700 text-gray-500 rounded-md text-center flex w-auto md:w-100 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 hover:border-gray-600"
+        type="search"
+        placeholder="Search"
+      />
+      <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="flex items-center gap-4 mr-4">
+    <button class="p-2 text-gray-400 hover:text-white transition-colors duration-200 rounded-full hover:bg-[#2C3E50]">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+      </svg>
+    </button>
+    <div class="flex items-center gap-2 group cursor-pointer">
+      <img class="w-8 h-8 rounded-full border-2 border-gray-300 group-hover:border-blue-400 transition-colors" src="./assets/Airtel.webp" alt="User Profile" />
+      <span class="text-white text-sm font-medium group-hover:text-blue-300 transition-colors">John Doe</span>
+    </div>
   </div>
 </div>
